@@ -8,7 +8,11 @@ require "PFP_Net"
 --- Modelled on the vanilla ISDeviceBatteryAction: the battery item is destroyed on
 --- insert and a fresh one is created on removal, so a battery has exactly one
 --- authoritative home at any time - the inventory or a slot, never both.
---- All inventory changes happen in complete(), which runs on the server.
+---
+--- All inventory changes happen in complete(). Like every vanilla timed action that
+--- moves items, that runs on the machine performing the action - the client in
+--- multiplayer - and is replicated with sendAddItemToContainer,
+--- sendRemoveItemFromContainer and syncItemFields. Those are no-ops in single player.
 
 ISPFPBatteryAction = ISBaseTimedAction:derive("ISPFPBatteryAction")
 
@@ -60,13 +64,11 @@ function ISPFPBatteryAction:stop()
 end
 
 function ISPFPBatteryAction:perform()
-    -- Client side only; the inventory change happens in complete().
+    -- The inventory change happens in complete().
     ISBaseTimedAction.perform(self)
 end
 
 function ISPFPBatteryAction:complete()
-    if isClient() then return true end
-
     local state, err = State.get(self.pump)
     if not state then
         PFP.Net.notify(self.character, err)

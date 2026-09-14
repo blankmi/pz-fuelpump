@@ -15,6 +15,6 @@ function PFP.Net.notify(character, key, params)
     if isServer() then
         sendServerCommand(character, PFP.Config.MODULE, "result", { key = key, params = params })
     elseif PFP.Feedback then
-        PFP.Feedback.show(key, params)
+        PFP.Feedback.show(character, key, params)
     end
 end
