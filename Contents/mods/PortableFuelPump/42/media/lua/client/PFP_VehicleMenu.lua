@@ -68,14 +68,16 @@ local function addAmountMenu(context, parentOption, playerObj, pump, srcPart, ta
 end
 
 --- @return table targets that still have room in their tank
+--- @return number how many vehicles were in range at all, full ones included
 local function usableTargets(srcPart)
     local targets = {}
-    for _, target in ipairs(Compat.findTransferTargets(srcPart)) do
+    local candidates = Compat.findTransferTargets(srcPart)
+    for _, target in ipairs(candidates) do
         if Compat.tankCapacity(target.part) - Compat.tankAmount(target.part) > Config.EPSILON then
             table.insert(targets, target)
         end
     end
-    return targets
+    return targets, #candidates
 end
 
 --- Adds the mod's entries to an already filled part menu.
@@ -91,8 +93,21 @@ function Menu.addEntries(playerIndex, context, slice, vehicle)
     local srcPart = Compat.findFuelTank(vehicle)
     if not srcPart or Compat.tankAmount(srcPart) <= Config.EPSILON then return end
 
-    local targets = usableTargets(srcPart)
-    if #targets == 0 then return end
+    -- With no target the entry is shown greyed out rather than hidden. The tank
+    -- distance is measured between the two tank access points, not the vehicle
+    -- centres, so it is easy to misjudge - and an entry that simply never appears
+    -- reads as a broken mod.
+    local targets, candidates = usableTargets(srcPart)
+    if #targets == 0 then
+        if context then
+            local label = candidates > 0
+                and getText("ContextMenu_PFP_TransferNoRoom")
+                or getText("ContextMenu_PFP_TransferTooFar",
+                    string.format("%.1f", Config.get("MaxTankDistance")))
+            context:addOption(label).notAvailable = true
+        end
+        return
+    end
 
     if context then
         local option = context:addOption(getText("ContextMenu_PFP_Transfer"))

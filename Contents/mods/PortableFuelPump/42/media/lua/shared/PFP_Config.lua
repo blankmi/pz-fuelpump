@@ -33,11 +33,11 @@ Config.LIMIT_PRESETS = { 5, 10, 20 }
 
 --- Defaults, overridden by sandbox-options.txt. { default, min, max }
 local DEFAULTS = {
-    PumpRate = { 0.2, 0.05, 5.0 },
+    PumpRate = { 0.5, 0.05, 5.0 },
     HookupSeconds = { 3.0, 0.0, 60.0 },
     LitresPerBattery = { 50.0, 1.0, 1000.0 },
     LitresPerConditionPoint = { 10.0, 0.5, 1000.0 },
-    MaxTankDistance = { 2.0, 0.5, 10.0 },
+    MaxTankDistance = { 3.0, 0.5, 10.0 },
     MaxPlayerDistance = { 1.5, 0.5, 10.0 },
 }
 

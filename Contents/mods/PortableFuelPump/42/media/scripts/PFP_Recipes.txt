@@ -35,7 +35,6 @@ module PFP
         SkillRequired = Electricity:2;Mechanics:1,
         xpAward = Electricity:15;Mechanics:5,
         AllowBatchCraft = false,
-        OnCreate = PFP_Recipe.OnCreatePump,
         inputs
         {
             item 1 tags[base:screwdriver] mode:keep flags[Prop1;MayDegradeVeryLight],

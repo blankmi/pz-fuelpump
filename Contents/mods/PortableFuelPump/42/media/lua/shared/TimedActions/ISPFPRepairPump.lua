@@ -84,8 +84,6 @@ function ISPFPRepairPump:perform()
 end
 
 function ISPFPRepairPump:complete()
-    if isClient() then return true end
-
     local ok, err = ISPFPRepairPump.canRepair(self.character, self.pump)
     if not ok then
         PFP.Net.notify(self.character, err)

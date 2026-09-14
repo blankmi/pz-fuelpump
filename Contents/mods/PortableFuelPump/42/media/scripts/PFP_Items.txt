@@ -8,6 +8,7 @@ module PFP
     item PortableFuelPump
     {
         ItemType = base:normal,
+        DisplayName = Portable Fuel Transfer Pump,
         DisplayCategory = Tool,
         Weight = 3.5,
         ConditionMax = 100,
@@ -23,6 +24,7 @@ module PFP
     item SmallPumpAssembly
     {
         ItemType = base:normal,
+        DisplayName = Small Pump Assembly,
         DisplayCategory = Material,
         Weight = 1.2,
         Icon = SmallPumpAssembly,

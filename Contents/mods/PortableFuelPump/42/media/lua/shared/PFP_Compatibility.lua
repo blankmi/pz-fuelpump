@@ -135,9 +135,12 @@ function Compat.findTransferTargets(srcPart)
     if not sx then return results end
 
     local maxDistance = Config.get("MaxTankDistance")
+    -- B42 changed IsoCell.getVehicles() to return a java.util.Set, which has no
+    -- indexed access - it has to be walked with its iterator.
     local vehicles = getCell():getVehicles()
-    for index = 0, vehicles:size() - 1 do
-        local vehicle = vehicles:get(index)
+    local iterator = vehicles and vehicles:iterator()
+    while iterator and iterator:hasNext() do
+        local vehicle = iterator:next()
         if vehicle and vehicle ~= srcVehicle then
             local part = Compat.findFuelTank(vehicle)
             if part and Compat.tankCapacity(part) > 0 then
