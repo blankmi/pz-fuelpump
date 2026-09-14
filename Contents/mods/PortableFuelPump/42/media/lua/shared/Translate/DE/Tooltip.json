@@ -1,0 +1,8 @@
+{
+    "Tooltip_PFP_Condition": "Zustand: %1 / %2",
+    "Tooltip_PFP_Battery": "Batterie %1: %2 %%",
+    "Tooltip_PFP_BatteryEmpty": "Batterie %1: leerer Slot",
+    "Tooltip_PFP_Active": "- aktiv",
+    "Tooltip_PFP_Range": "Geschätzte Reichweite: %1 L",
+    "Tooltip_PFP_Hoses": "Schläuche: 2, fest verbaut"
+}

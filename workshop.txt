@@ -1,0 +1,10 @@
+version=1
+id=0
+title=Portable Fuel Pump
+description=A craftable, battery powered pump that transfers gasoline between two parked vehicles.
+description=
+description=- Crafted from an alarm clock housing, a small pump assembly, two permanently fitted rubber hoses and electronics.
+description=- Two battery slots, drained one after the other. Partly charged batteries can be taken back out.
+description=- All fuel, charge and condition changes are applied authoritatively on the server.
+tags=Items;Vehicles;Multiplayer
+visibility=private

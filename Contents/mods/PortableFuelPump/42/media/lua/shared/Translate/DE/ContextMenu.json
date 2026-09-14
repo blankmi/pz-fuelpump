@@ -1,0 +1,12 @@
+{
+    "ContextMenu_PFP_Pump": "Benzinpumpe",
+    "ContextMenu_PFP_InsertBattery": "Batterie in Slot %1 einsetzen",
+    "ContextMenu_PFP_RemoveBattery": "Batterie aus Slot %1 entnehmen",
+    "ContextMenu_PFP_BatteryChoice": "Batterie (%1 %%)",
+    "ContextMenu_PFP_Repair": "Pumpe reparieren",
+    "ContextMenu_PFP_Transfer": "Benzin mit Pumpe übertragen...",
+    "ContextMenu_PFP_TransferNearest": "In nächstes Fahrzeug pumpen",
+    "ContextMenu_PFP_Target": "%1 - %2 Kacheln - %3 L",
+    "ContextMenu_PFP_UntilDone": "Bis Ziel voll oder Quelle leer",
+    "ContextMenu_PFP_Litres": "%1 Liter"
+}

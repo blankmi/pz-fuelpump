@@ -1,0 +1,8 @@
+id=PortableFuelPump
+name=Portable Fuel Pump
+description=A craftable, battery powered pump that transfers gasoline between two parked vehicles.
+author=blankbytes
+modversion=0.1.0
+poster=poster.png
+icon=poster.png
+versionMin=42.20

@@ -1,0 +1,8 @@
+{
+    "Tooltip_PFP_Condition": "Condition: %1 / %2",
+    "Tooltip_PFP_Battery": "Battery %1: %2 %%",
+    "Tooltip_PFP_BatteryEmpty": "Battery %1: empty slot",
+    "Tooltip_PFP_Active": "- active",
+    "Tooltip_PFP_Range": "Estimated range: %1 L",
+    "Tooltip_PFP_Hoses": "Hoses: 2, permanently fitted"
+}

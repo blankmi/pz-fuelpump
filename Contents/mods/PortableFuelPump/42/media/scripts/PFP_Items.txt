@@ -1,0 +1,33 @@
+module PFP
+{
+    imports { Base }
+
+    /* Portable, battery powered fuel transfer pump.
+       Battery slots and wear remainder live in the item's ModData (see PFP_State.lua),
+       the pump's health is the vanilla condition. */
+    item PortableFuelPump
+    {
+        ItemType = base:normal,
+        DisplayCategory = Tool,
+        Weight = 3.5,
+        ConditionMax = 100,
+        ConditionLowerChanceOneIn = 1000,
+        Icon = PortableFuelPump,
+        WorldStaticModel = MetalBox,
+        Tags = pfp:fuelpump;base:hasmetal,
+        MetalValue = 20.0,
+    }
+
+    /* Small electric pump head. Vanilla B42 has no motor or pump component,
+       so the mod supplies its own intermediate product. */
+    item SmallPumpAssembly
+    {
+        ItemType = base:normal,
+        DisplayCategory = Material,
+        Weight = 1.2,
+        Icon = SmallPumpAssembly,
+        WorldStaticModel = EngineParts,
+        Tags = pfp:pumpassembly;base:hasmetal,
+        MetalValue = 10.0,
+    }
+}

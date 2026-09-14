@@ -1,0 +1,56 @@
+module PFP
+{
+    imports { Base }
+
+    craftRecipe MakeSmallPumpAssembly
+    {
+        time = 120,
+        timedAction = MakingElectrical,
+        Tags = AnySurfaceCraft,
+        category = Electrical,
+        NeedToBeLearn = false,
+        SkillRequired = Mechanics:2;Electricity:1,
+        xpAward = Mechanics:10;Electricity:5,
+        AllowBatchCraft = false,
+        inputs
+        {
+            item 1 tags[base:screwdriver] mode:keep flags[Prop1;MayDegradeVeryLight],
+            item 1 [Base.EngineParts] flags[ItemCount],
+            item 1 [Base.ElectricWire] flags[ItemCount],
+            item 2 [Base.Screws] flags[ItemCount],
+        }
+        outputs
+        {
+            item 1 PFP.SmallPumpAssembly,
+        }
+    }
+
+    craftRecipe MakePortableFuelPump
+    {
+        time = 200,
+        timedAction = MakingElectrical,
+        Tags = AnySurfaceCraft,
+        category = Electrical,
+        NeedToBeLearn = false,
+        SkillRequired = Electricity:2;Mechanics:1,
+        xpAward = Electricity:15;Mechanics:5,
+        AllowBatchCraft = false,
+        OnCreate = PFP_Recipe.OnCreatePump,
+        inputs
+        {
+            item 1 tags[base:screwdriver] mode:keep flags[Prop1;MayDegradeVeryLight],
+            item 1 [Base.AlarmClock2] flags[ItemCount],
+            item 2 [Base.RubberHose] flags[ItemCount],
+            item 1 [PFP.SmallPumpAssembly] flags[ItemCount],
+            item 1 [Base.ElectricWire] flags[ItemCount],
+            item 3 [Base.ElectronicsScrap] flags[ItemCount],
+            item 4 [Base.Screws] flags[ItemCount],
+            item 2 [Base.DuctTape],
+        }
+        outputs
+        {
+            item 1 PFP.PortableFuelPump,
+        }
+    }
+
+}

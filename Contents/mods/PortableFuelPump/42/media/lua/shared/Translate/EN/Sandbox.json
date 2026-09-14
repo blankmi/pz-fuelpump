@@ -1,0 +1,15 @@
+{
+    "Sandbox_PFP": "Portable Fuel Pump",
+    "Sandbox_PFP_PumpRate": "Pump rate (litres per second)",
+    "Sandbox_PFP_PumpRate_tooltip": "How much gasoline the pump moves per action second.",
+    "Sandbox_PFP_HookupSeconds": "Hook-up time (seconds)",
+    "Sandbox_PFP_HookupSeconds_tooltip": "Time spent connecting the hoses before any fuel moves.",
+    "Sandbox_PFP_LitresPerBattery": "Litres per full battery",
+    "Sandbox_PFP_LitresPerBattery_tooltip": "How far one fully charged battery gets you.",
+    "Sandbox_PFP_LitresPerConditionPoint": "Litres per condition point",
+    "Sandbox_PFP_LitresPerConditionPoint_tooltip": "Wear: litres pumped for each point of condition lost.",
+    "Sandbox_PFP_MaxTankDistance": "Maximum distance between tank ports (tiles)",
+    "Sandbox_PFP_MaxTankDistance_tooltip": "How far apart the two fuel tank access points may be.",
+    "Sandbox_PFP_MaxPlayerDistance": "Maximum distance to the source tank (tiles)",
+    "Sandbox_PFP_MaxPlayerDistance_tooltip": "How far the player may stand from the source tank port."
+}

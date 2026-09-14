@@ -1,0 +1,37 @@
+VERSION = 1,
+
+option PFP.PumpRate
+{
+    type = double, min = 0.05, max = 5.0, default = 0.2,
+    page = PFP, translation = PFP_PumpRate,
+}
+
+option PFP.HookupSeconds
+{
+    type = double, min = 0.0, max = 60.0, default = 3.0,
+    page = PFP, translation = PFP_HookupSeconds,
+}
+
+option PFP.LitresPerBattery
+{
+    type = double, min = 1.0, max = 1000.0, default = 50.0,
+    page = PFP, translation = PFP_LitresPerBattery,
+}
+
+option PFP.LitresPerConditionPoint
+{
+    type = double, min = 0.5, max = 1000.0, default = 10.0,
+    page = PFP, translation = PFP_LitresPerConditionPoint,
+}
+
+option PFP.MaxTankDistance
+{
+    type = double, min = 0.5, max = 10.0, default = 2.0,
+    page = PFP, translation = PFP_MaxTankDistance,
+}
+
+option PFP.MaxPlayerDistance
+{
+    type = double, min = 0.5, max = 10.0, default = 1.5,
+    page = PFP, translation = PFP_MaxPlayerDistance,
+}

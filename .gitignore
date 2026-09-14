@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code local settings (machine-specific, not shared)
+.claude/settings.local.json
+
+# Project Zomboid workshop packaging / local build output
+workshop/
+build/
+dist/
+*.log
+
+# Steam Workshop upload metadata (generated locally, not source)
+workshop.vdf

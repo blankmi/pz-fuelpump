@@ -1,0 +1,15 @@
+{
+    "Sandbox_PFP": "Tragbare Benzinpumpe",
+    "Sandbox_PFP_PumpRate": "Pumpgeschwindigkeit (Liter pro Sekunde)",
+    "Sandbox_PFP_PumpRate_tooltip": "Wie viel Benzin die Pumpe pro Aktionssekunde fördert.",
+    "Sandbox_PFP_HookupSeconds": "Anschlusszeit (Sekunden)",
+    "Sandbox_PFP_HookupSeconds_tooltip": "Zeit zum Anschließen der Schläuche, bevor Benzin fließt.",
+    "Sandbox_PFP_LitresPerBattery": "Liter je voller Batterie",
+    "Sandbox_PFP_LitresPerBattery_tooltip": "Reichweite einer vollständig geladenen Batterie.",
+    "Sandbox_PFP_LitresPerConditionPoint": "Liter je Zustandspunkt",
+    "Sandbox_PFP_LitresPerConditionPoint_tooltip": "Verschleiß: geförderte Liter je verlorenem Zustandspunkt.",
+    "Sandbox_PFP_MaxTankDistance": "Maximaler Abstand der Tankanschlüsse (Kacheln)",
+    "Sandbox_PFP_MaxTankDistance_tooltip": "Wie weit die beiden Tankanschlüsse auseinanderliegen dürfen.",
+    "Sandbox_PFP_MaxPlayerDistance": "Maximaler Abstand zum Quelltank (Kacheln)",
+    "Sandbox_PFP_MaxPlayerDistance_tooltip": "Wie weit der Spieler vom Quellanschluss entfernt stehen darf."
+}
