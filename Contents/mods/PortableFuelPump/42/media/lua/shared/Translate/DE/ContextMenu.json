@@ -5,6 +5,8 @@
     "ContextMenu_PFP_BatteryChoice": "Batterie (%1 %%)",
     "ContextMenu_PFP_Repair": "Pumpe reparieren",
     "ContextMenu_PFP_Transfer": "Benzin mit Pumpe übertragen...",
+    "ContextMenu_PFP_TransferTooFar": "Benzin übertragen - kein zweites Fahrzeug im Umkreis von %1 Kacheln",
+    "ContextMenu_PFP_TransferNoRoom": "Benzin übertragen - Tanks in der Nähe sind voll",
     "ContextMenu_PFP_TransferNearest": "In nächstes Fahrzeug pumpen",
     "ContextMenu_PFP_Target": "%1 - %2 Kacheln - %3 L",
     "ContextMenu_PFP_UntilDone": "Bis Ziel voll oder Quelle leer",

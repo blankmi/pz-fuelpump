@@ -5,6 +5,8 @@
     "ContextMenu_PFP_BatteryChoice": "Battery (%1 %%)",
     "ContextMenu_PFP_Repair": "Repair pump",
     "ContextMenu_PFP_Transfer": "Transfer gasoline with pump...",
+    "ContextMenu_PFP_TransferTooFar": "Transfer gasoline - no second vehicle within %1 tiles",
+    "ContextMenu_PFP_TransferNoRoom": "Transfer gasoline - nearby tanks are full",
     "ContextMenu_PFP_TransferNearest": "Pump into nearest vehicle",
     "ContextMenu_PFP_Target": "%1 - %2 tiles - %3 L",
     "ContextMenu_PFP_UntilDone": "Until target full or source empty",

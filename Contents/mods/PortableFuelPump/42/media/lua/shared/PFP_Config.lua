@@ -37,7 +37,7 @@ local DEFAULTS = {
     HookupSeconds = { 3.0, 0.0, 60.0 },
     LitresPerBattery = { 50.0, 1.0, 1000.0 },
     LitresPerConditionPoint = { 10.0, 0.5, 1000.0 },
-    MaxTankDistance = { 2.0, 0.5, 10.0 },
+    MaxTankDistance = { 3.0, 0.5, 10.0 },
     MaxPlayerDistance = { 1.5, 0.5, 10.0 },
 }
 

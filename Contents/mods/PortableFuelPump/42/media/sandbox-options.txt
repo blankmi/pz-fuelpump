@@ -26,7 +26,7 @@ option PFP.LitresPerConditionPoint
 
 option PFP.MaxTankDistance
 {
-    type = double, min = 0.5, max = 10.0, default = 2.0,
+    type = double, min = 0.5, max = 10.0, default = 3.0,
     page = PFP, translation = PFP_MaxTankDistance,
 }
 
