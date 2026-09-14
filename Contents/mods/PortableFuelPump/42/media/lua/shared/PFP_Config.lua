@@ -1,3 +1,4 @@
+print("[PFP] shared/PFP_Config.lua loaded")
 --- Validated configuration for the Portable Fuel Pump.
 --- Sandbox values are read lazily and clamped, so a broken or hostile sandbox file
 --- can never push the transfer math into unbounded or negative territory.

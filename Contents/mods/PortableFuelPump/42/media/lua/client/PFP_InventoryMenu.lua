@@ -1,3 +1,4 @@
+print("[PFP] client/PFP_InventoryMenu.lua loaded")
 require "PFP_Config"
 require "PFP_State"
 require "TimedActions/ISPFPBatteryAction"
