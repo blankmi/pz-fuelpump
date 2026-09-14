@@ -2,7 +2,7 @@ VERSION = 1,
 
 option PFP.PumpRate
 {
-    type = double, min = 0.05, max = 5.0, default = 0.2,
+    type = double, min = 0.05, max = 5.0, default = 0.5,
     page = PFP, translation = PFP_PumpRate,
 }
 

@@ -36,7 +36,7 @@ function ISPFPTransferFuel:new(character, pump, srcPart, dstPart, limitLitres)
     o.srcVehicle = srcPart:getVehicle()
     o.dstVehicle = dstPart:getVehicle()
     o.transferred = 0
-    o.lastElapsed = 0
+    o.pumpedSeconds = 0
     o.stopReason = nil
     o.stopOnWalk = true
     o.stopOnRun = true
@@ -125,31 +125,34 @@ function ISPFPTransferFuel:complete()
     return true
 end
 
---- Elapsed real time since the action started, in seconds.
+--- Elapsed action time in seconds, derived from the action's own progress.
+---
+--- Deliberately not the wall clock: a timed action advances with game time, so on
+--- fast forward it finishes in a fraction of the real seconds its duration asks
+--- for. Metering the volume by real time then books only that fraction and the
+--- action completes with the source still full - which is what it used to do.
 function ISPFPTransferFuel:elapsedSeconds()
-    if self.netAction then
-        return self.netAction:getProgress() * (self.maxTime / Config.CYCLES_PER_SECOND)
-    end
-    self.startedMs = self.startedMs or getTimestampMs()
-    return (getTimestampMs() - self.startedMs) / 1000
+    local progress = self.netAction and self.netAction:getProgress() or self:getJobDelta()
+    return progress * (self.maxTime / Config.CYCLES_PER_SECOND)
 end
 
---- One authoritative slice: derive a bounded dt from real time, then transfer.
+--- One authoritative slice: book the pumping time that has passed since the last
+--- tick, bounded, then transfer that much.
 function ISPFPTransferFuel:tick()
     if self.stopReason then return end
 
-    local elapsed = self:elapsedSeconds()
-    local previous = self.lastElapsed or 0
-    if elapsed <= previous then return end
-    self.lastElapsed = elapsed
-
-    local hookup = Config.get("HookupSeconds")
-    local pumpingNow = elapsed - hookup
+    local pumpingNow = self:elapsedSeconds() - Config.get("HookupSeconds")
     if pumpingNow <= 0 then return end
 
-    local pumpingBefore = math.max(0, previous - hookup)
-    local dt = math.min(pumpingNow - pumpingBefore, Config.MAX_STEP_SECONDS)
+    local booked = self.pumpedSeconds or 0
+    local dt = pumpingNow - booked
     if dt <= 0 then return end
+
+    -- A single step stays bounded so a stalled server cannot book one huge
+    -- unvalidated transfer, but the surplus is carried to the next tick rather
+    -- than dropped - discarded time would vanish out of the transfer.
+    if dt > Config.MAX_STEP_SECONDS then dt = Config.MAX_STEP_SECONDS end
+    self.pumpedSeconds = booked + dt
 
     self:transferStep(dt)
 end
