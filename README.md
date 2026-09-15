@@ -4,7 +4,7 @@ Portable Fuel Pump is a Project Zomboid Build 42 mod that adds a craftable, batt
 
 The pump is built as a self-contained tool: its two hoses are fitted during crafting, and it holds up to two removable batteries. Fuel transfer is performed as a timed action and stops when a vehicle moves, either tank can no longer be used, the player leaves the working area, or the pump runs out of charge.
 
-> **Development status:** pre-release. The mod targets Build 42.20 and has not yet completed in-game or dedicated-server validation. It should be treated as work in progress until that testing is complete.
+> **Development status:** pre-release. The mod targets Build 42.20 and has been tested in single-player. Dedicated-server validation is still pending, so it should be treated as work in progress until that testing is complete.
 
 ## Features
 
@@ -23,7 +23,7 @@ The pump is built as a self-contained tool: its two hoses are fitted during craf
 
 ## Crafting
 
-Crafting is available from the Electrical category and requires basic Mechanics and Electrical skill.
+Crafting is available from the Electrical category and requires Mechanics level 2 and Electricity level 2 for both recipes.
 
 1. Create a **Small Pump Assembly** from engine parts, wire, screws, and a screwdriver.
 2. Build the **Portable Fuel Pump** from the assembly, an alarm clock, rubber hose, wire, electronics scrap, screws, duct tape, and a screwdriver.
@@ -45,12 +45,12 @@ The `PFP` Sandbox Options page exposes the following controls:
 
 | Option | Default | Purpose |
 | --- | ---: | --- |
-| Pump rate | 0.2 L/s | Fuel transfer speed |
+| Pump rate | 0.5 L/s | Fuel transfer speed |
 | Hookup time | 3 s | Time before pumping begins |
 | Litres per battery | 50 L | Fuel moved by one full battery charge |
 | Litres per condition point | 10 L | Fuel moved for each point of pump condition |
-| Max tank distance | 2 m | Maximum distance between fuel tanks |
-| Max player distance | 1.5 m | How close the operator must remain |
+| Max tank distance | 3 tiles | Maximum distance between fuel tank ports |
+| Max player distance | 1.5 tiles | Maximum distance the operator may stand from the source tank port |
 
 ## Multiplayer and persistence
 
